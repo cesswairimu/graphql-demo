@@ -1,0 +1,15 @@
+type Customers {
+    #this fields must match how they have been defined in the model
+    id: ID!
+    firstName: String!
+    lastName: String
+    address: Address
+}
+
+extend type Query {
+    findAllCustomers: [Customers]!
+}
+
+extend type Mutation {
+    createNewCustomer(firstName: String!, lastName: String, address: ID!): Customers!
+}

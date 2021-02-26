@@ -1,0 +1,18 @@
+type Address {
+    #this fields must match how they have been defined in the model
+    id: ID!
+    name: String!
+    region: String!
+    landmark: String!
+}
+
+# Root
+type Query {
+    findAllAddresses: [Address]!
+    countAddress: Long!
+}
+
+# Root
+type Mutation {
+    createAddress(name: String!, region: String!, landmark: String!): Address!
+}
